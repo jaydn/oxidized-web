@@ -2,17 +2,15 @@
 %html{lang: 'en'}
   !=haml :head
   %body
-    %nav.navbar.navbar-default.navbar-static-top{role: 'navigation'}
+    %nav.navbar.navbar-expand-lg.navbar-light.bg-light
       .container-fluid
         .navbar-header
-          %button.navbar-toggle.collapsed{type: 'button',
-                                          :'data-toggle' => 'collapse',
-                                          :'data-target' => '#ox-nav',
+          %button.navbar-toggler.collapsed{type: 'button',
+                                          :'data-bs-toggle' => 'collapse',
+                                          :'data-bs-target' => '#ox-nav',
                                           :'aria-expanded' => 'false'}
             %span.sr-only Toggle Navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
+            %i.fas.fa-bars
           %a.navbar-brand{href: url_for('/')}
             %img{src: url_for('/images/oxidizing_40px.png')} Oxidized
 
@@ -32,14 +30,14 @@
                                            name: 'search_in_conf_textbox',
                                            placeholder: 'Search in Configs'}
               %button.btn.btn-primary.btn-sm{type: 'submit'}
-                %span.glyphicon.glyphicon-search
+                %i.fas.fa-search
 
     .container-fluid
       =yield
     !=haml :footer
     %script{src: url_for('/scripts/bootstrap.min.js')}
-    %script{src: url_for('/scripts/jquery.dataTables.min.js')}
     %script{src: url_for('/scripts/dataTables.bootstrap.js')}
     %script{src: url_for('/scripts/dataTables.colVis.js')}
     %script{src: url_for('/scripts/oxidized.js')}
+    %script{src: url_for('/scripts/jquery.dataTables.min.js')}
 

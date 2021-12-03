@@ -9,7 +9,8 @@
   .pull-right
     %form
       %button.ColVis_Button{type: 'button', onclick: 'history.go();'}
-        %span.glyphicon.glyphicon-repeat Refresh
+        %i.fas.fa-sync
+        Refresh
   .table-responsive
     %table.table.table-condensed.table-striped.table-hover#versionsTable
       %thead
@@ -33,7 +34,7 @@
               - params = "#{params}&date=#{x[:date]}&num=#{nb}"
               %a{title: 'configuration',
                  href: url_for("/node/version/view?#{params}")}
-                %span.glyphicon.glyphicon-cloud-download
+                %i.fas.fa-file-download
               &nbsp;&nbsp;
               %a{title: 'diff', href: url_for("/node/version/diffs?#{params}")}
                 %img{src: url_for('/images/diff_15x17.png')}

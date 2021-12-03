@@ -5,27 +5,27 @@
     %nav.navbar.navbar-expand-lg.navbar-light.bg-light
       .container-fluid
         .navbar-header
+          %a.navbar-brand{href: url_for('/')}
+            %img{src: url_for('/images/oxidizing_40px.png'), height: '20em'} Oxidized
           %button.navbar-toggler.collapsed{type: 'button',
                                           :'data-bs-toggle' => 'collapse',
                                           :'data-bs-target' => '#ox-nav',
                                           :'aria-expanded' => 'false'}
-            %span.sr-only Toggle Navigation
-            %i.fas.fa-bars
-          %a.navbar-brand{href: url_for('/')}
-            %img{src: url_for('/images/oxidizing_40px.png')} Oxidized
-
+            %span.navbar-toggler-icon
         .collapse.navbar-collapse#ox-nav
-          %ul.nav.navbar-nav
-            %li{class: request.path_info == '/nodes/stats' ? 'active' : ''}
-              %a.navbar-link{href: url_for('/nodes/stats')} Stats
+          %ul.navbar-nav.me-auto.mb-2.mb-lg-0
+            %li.nav-item
+              %a.nav-link{href: url_for('/nodes/stats'), class: request.path_info == '/nodes/stats' ? 'active' : ''}
+                Stats
 
-            %li{class: request.path_info == '/migration' ? 'active' : ''}
-              %a.navbar-link{href: url_for('/migration')} Migration
+            %li.nav-item
+              %a.nav-link{href: url_for('/migration'), class: request.path_info == '/migration' ? 'active' : ''}
+                Migration
 
-          %form.navbar-form.navbar-right{role: 'search',
-                                         action: url_for('/nodes/conf_search'),
-                                         method: 'post'}
-            .form-group#to_search_in_config{name: 'to_search_in_config'}
+          %form.d-flex{role: 'search',
+                       action: url_for('/nodes/conf_search'),
+                       method: 'post'}
+            .input-group#to_search_in_config{name: 'to_search_in_config'}
               %input.form-control.input-sm{type: 'text',
                                            name: 'search_in_conf_textbox',
                                            placeholder: 'Search in Configs'}

@@ -2,12 +2,12 @@
 %html{lang: 'en'}
   !=haml :head
   %body
-    %nav.navbar.navbar-default.navbar-static-top{role: 'navigation'}
+    %nav.navbar.navbar-expand-lg.navbar-light.bg-light
       .container-fluid
         .navbar-header
-          %button.navbar-toggle.collapsed{type: 'button',
-                                          :'data-toggle' => 'collapse',
-                                          :'data-target' => '#ox-nav',
+          %button.navbar-toggler.collapsed{type: 'button',
+                                          :'data-bs-toggle' => 'collapse',
+                                          :'data-bs-target' => '#ox-nav',
                                           :'aria-expanded' => 'false'}
             %span.sr-only Toggle Navigation
             %span.icon-bar

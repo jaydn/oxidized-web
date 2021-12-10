@@ -58,7 +58,32 @@
 
 :javascript
   $(function() {
+    $(document).ready(function() {
+      $('#nodesTable').DataTable( {
+          dom: 'Bfrtip',
+          buttons: [
+              'colvis'
+          ],
+          columnDefs: [{
+            visible: false,
+            targets: 1
+          }, {
+            type: "string",
+            targets: 3
+          }],
+          lengthMenu: [[50, 250, 500, -1], [50, 250, 500, "All"]],
+          colVis: {
+            exclude: [0, 7]
+          }
+
+      } );
+    } );
+  });
+
+
+  /*$(function() {
     $('#nodesTable').dataTable({
+      buttons: [ 'colvis' ],
       dom: 'C<"clear">lfrtip',
       bAutoWidth: false,
       "lengthMenu": [[50, 250, 500, -1], [50, 250, 500, "All"]],
@@ -73,6 +98,6 @@
         exclude: [0, 7]
       }
     });
-  });
+  });*/
 
 
